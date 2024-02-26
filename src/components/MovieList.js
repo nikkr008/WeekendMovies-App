@@ -1,6 +1,7 @@
 import React from 'react'
 import { SafeAreaView, StyleSheet, Text, View, TouchableOpacity, FlatList} from 'react-native';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import MainScreen from './apiList';
 
 export default Logo = () => {
     return (
@@ -23,6 +24,7 @@ export default Logo = () => {
                         <Text style={styles.languagetxt}>Tamil</Text>
                     </TouchableOpacity>
             </View>
+            <MainScreen/>
         </SafeAreaView>
     )
 }
@@ -51,7 +53,8 @@ const styles= StyleSheet.create({
         fontSize: 24,
         fontWeight: 'bold',
         justifyContent: 'space-evenly',
-        height: 60
+        height: 60,
+        backgroundColor: 'lightgrey'
     },
     languagetxt:{
         margin: 2,
