@@ -7,7 +7,7 @@ function App() {
   return (
       <View>
         <Logo/>
-        <Text> Tik Tak Toe With Nik </Text>
+        <Text> Movies With Nik </Text>
       </View>
   );
 }

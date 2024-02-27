@@ -1,5 +1,5 @@
 import React from 'react'
-import { SafeAreaView, StyleSheet, Text, View, TouchableOpacity, FlatList} from 'react-native';
+import { SafeAreaView, StyleSheet, Text, View} from 'react-native';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import MainScreen from './apiList';
 
@@ -12,17 +12,6 @@ export default Logo = () => {
                     <FontAwesome name="user" size={38} color="#ffffff" paddingRight={20}/>
                     <FontAwesome name="heart" size={38} color="#ffffff" paddingRight={0}/>
                 </View>
-            </View>
-            <View style={styles.languageBtn}>
-                    <TouchableOpacity>
-                        <Text style={styles.languagetxt}>English</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity>
-                        <Text style={styles.languagetxt}>Hindi</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity>
-                        <Text style={styles.languagetxt}>Tamil</Text>
-                    </TouchableOpacity>
             </View>
             <MainScreen/>
         </SafeAreaView>
@@ -46,24 +35,5 @@ const styles= StyleSheet.create({
         flex:1,
         flexDirection: 'row',
         justifyContent: 'space-evenly', 
-    },
-    languageBtn:{
-        flexDirection: 'row',
-        alignItems: 'center',
-        fontSize: 24,
-        fontWeight: 'bold',
-        justifyContent: 'space-evenly',
-        height: 60,
-        backgroundColor: 'lightgrey'
-    },
-    languagetxt:{
-        margin: 2,
-        backgroundColor: 'blue',
-        color: 'white',
-        padding: 10,
-        height: 40,
-        width: 100,
-        borderRadius: 5,
-        paddingLeft: 30
     }
 })
