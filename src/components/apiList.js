@@ -1,20 +1,17 @@
 import React, {useEffect, useState} from 'react';
 import {Image, TouchableOpacity} from 'react-native';
-import {
-  ActivityIndicator,
-  Text,
-  View,
-  FlatList,
-  StyleSheet,
-} from 'react-native';
+import MovieDetails from './movieDetails';
+import { ActivityIndicator, Text, View, FlatList, StyleSheet, } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-const MainScreen = () => {
+const MainScreen = ({navigation}) => {
   const [isLoading, setLoading] = useState(true);
   const [data, setData] = useState([]);
   const [language, setLanguage] = useState(null);
   const [filteredData, setFilteredData] = useState([]);
   let [p, setPage] = useState(1);
-
+  
   const getMovies = async () => {
     try {
       let url = 'https://api.themoviedb.org/3/discover/movie?api_key=879bb3a6d9417fe3d3096d8dff174d73&page=' + p
@@ -24,6 +21,7 @@ const MainScreen = () => {
       const json = await response.json();
       setData(json.results);
       setFilteredData(json.results);
+      // console.log(json.results);
     } catch (error) {
       console.error(error);
     } finally {
@@ -73,6 +71,14 @@ const MainScreen = () => {
           data={filteredData}
           keyExtractor={({id}) => id}
           renderItem={({item}) => (
+            <TouchableOpacity onPress={() => {
+              /* 1. Navigate to the Details route with params */
+              navigation.navigate('MovieDetails', {
+                item
+                // itemId: 86,
+                // otherParam: 'anything you want here',
+              });
+            }}>
             <View style={styles.movieContainer}>
               <Image
                 source={{
@@ -89,6 +95,7 @@ const MainScreen = () => {
                 </Text>
               </View>
             </View>
+            </TouchableOpacity>
           )}
         />
       )}
@@ -107,7 +114,7 @@ const MainScreen = () => {
 
 const styles = StyleSheet.create({
   body:{
-    height: 'auto',
+    height: 610,
     width: 'auto',
     marginBottom: 'auto',
     padding: 'auto'
