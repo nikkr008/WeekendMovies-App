@@ -21,7 +21,6 @@ function MovieDetails({ route, navigation }) {
                 <Text style={styles.resttxt}>Popularity: {item.popularity}</Text>
                 <Text style={styles.resttxt}>Vote Count: {item.vote_Count}</Text>
         </View>
-
     </View>
     );
   }

@@ -75,8 +75,6 @@ const MainScreen = ({navigation}) => {
               /* 1. Navigate to the Details route with params */
               navigation.navigate('MovieDetails', {
                 item
-                // itemId: 86,
-                // otherParam: 'anything you want here',
               });
             }}>
             <View style={styles.movieContainer}>

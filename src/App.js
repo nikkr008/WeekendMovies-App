@@ -5,6 +5,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import MovieList from './components/MovieList';
 import MovieDetails from './components/movieDetails';
 import MainScreen from './components/apiList';
+import NavBar from './components/NavBar';
 
 const Stack = createNativeStackNavigator();
 
@@ -12,13 +13,41 @@ function App({navigation}) {
   return (
     <NavigationContainer>
     <Stack.Navigator initialRouteName='MainScreen'>
-      <Stack.Screen name='MainScreen' component={MainScreen}></Stack.Screen>
-      <Stack.Screen name='MovieDetails' component={MovieDetails}></Stack.Screen>
+      <Stack.Screen 
+        name='MainScreen' 
+        component={MainScreen}
+        options={{
+          title: 'Movie List', //Set Header Title
+          headerStyle: {
+            backgroundColor: '#000000', //Set Header color
+          },
+          headerTintColor: '#ffffff', //Set Header text color
+          headerTitleStyle: {
+            fontWeight: 'bold', //Set Header text style
+          },
+          headerRight: () => <NavBar/>,
+      }}
+      ></Stack.Screen>
+      <Stack.Screen 
+        name='MovieDetails' 
+        component={MovieDetails}
+        options={{
+          title: 'Movie Details', //Set Header Title
+          headerStyle: {
+            backgroundColor: '#000000', //Set Header color
+          },
+          headerTintColor: '#ffffff', //Set Header text color
+          headerTitleStyle: {
+          fontWeight: 'bold', //Set Header text style
+          },
+          headerRight: () => <NavBar/>,
+        }}
+      ></Stack.Screen>
     </Stack.Navigator>
   </NavigationContainer>
   );
 }
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({}); 
 
 export default App;
