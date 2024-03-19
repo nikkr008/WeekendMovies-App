@@ -1,10 +1,13 @@
 import React from 'react';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 
-import {View, StyleSheet, Image, Pressable} from 'react-native';
-import { TouchableOpacity } from 'react-native-gesture-handler';
+import {View, StyleSheet, Image, Pressable, TouchableOpacity} from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+import ProfileMenu from './ProfileMenu';
+import Favourite from './Favourite';
 
 const NavBar = () => {
+  const navigation= useNavigation()
   return (
     <View style={{flexDirection: 'row'}}>
       <Image
@@ -19,12 +22,12 @@ const NavBar = () => {
           marginRight: 80
         }}
       />
-      <Pressable>
+      <TouchableOpacity onPress={()=>{navigation.navigate('ProfileMenu')}}>
         <FontAwesome name="user" size={38} color="#ffffff" paddingRight={20}/>
-      </Pressable>
-      <Pressable>
+      </TouchableOpacity>
+      <TouchableOpacity onPress={()=>{navigation.navigate('Favourite')}}>
         <FontAwesome name="heart" size={38} color="#ffffff" paddingRight={0}/>
-      </Pressable>
+      </TouchableOpacity>
     </View>
   );
 };

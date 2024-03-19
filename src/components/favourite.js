@@ -1,9 +1,9 @@
 import React from "react";
-
-const FavouriteScreen = () => {
+import {Text} from 'react-native';
+const Favourite = () => {
     return(
-        <View></View>
+        <Text>Hello fav</Text>
     ) 
 }
 
-export default FavouriteScreen;
+export default Favourite;

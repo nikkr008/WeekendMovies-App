@@ -6,7 +6,8 @@ import MovieList from './components/MovieList';
 import MovieDetails from './components/movieDetails';
 import MainScreen from './components/apiList';
 import NavBar from './components/NavBar';
-
+import ProfileMenu from './components/ProfileMenu';
+import Favourite from './components/Favourite';
 const Stack = createNativeStackNavigator();
 
 function App({navigation}) {
@@ -42,6 +43,36 @@ function App({navigation}) {
           },
           headerRight: () => <NavBar/>,
         }}
+      ></Stack.Screen>
+      <Stack.Screen 
+        name='ProfileMenu' 
+        component={ProfileMenu}
+        // options={{
+        //   title: 'profile Menu', //Set Header Title
+        //   headerStyle: {
+        //     backgroundColor: '#000000', //Set Header color
+        //   },
+        //   headerTintColor: '#ffffff', //Set Header text color
+        //   headerTitleStyle: {
+        //   fontWeight: 'bold', //Set Header text style
+        //   },
+        //   headerRight: () => <NavBar/>,
+        // }}
+      ></Stack.Screen>
+      <Stack.Screen 
+        name='Favourite' 
+        component={Favourite}
+        // options={{
+        //   title: 'profile Menu', //Set Header Title
+        //   headerStyle: {
+        //     backgroundColor: '#000000', //Set Header color
+        //   },
+        //   headerTintColor: '#ffffff', //Set Header text color
+        //   headerTitleStyle: {
+        //   fontWeight: 'bold', //Set Header text style
+        //   },
+        //   headerRight: () => <NavBar/>,
+        // }}
       ></Stack.Screen>
     </Stack.Navigator>
   </NavigationContainer>
