@@ -8,10 +8,14 @@ import MainScreen from './components/apiList';
 import NavBar from './components/NavBar';
 import ProfileMenu from './components/ProfileMenu';
 import Favourite from './components/Favourite';
+import HelpCenter from './components/HelpCenter';
+import {PracticeContext, PracticeProvider} from './components/Context';
+
 const Stack = createNativeStackNavigator();
 
 function App({navigation}) {
   return (
+    <PracticeProvider>
     <NavigationContainer>
     <Stack.Navigator initialRouteName='MainScreen'>
       <Stack.Screen 
@@ -27,8 +31,8 @@ function App({navigation}) {
             fontWeight: 'bold', //Set Header text style
           },
           headerRight: () => <NavBar/>,
-      }}
-      ></Stack.Screen>
+        }}
+        ></Stack.Screen>
       <Stack.Screen 
         name='MovieDetails' 
         component={MovieDetails}
@@ -48,9 +52,9 @@ function App({navigation}) {
         name='ProfileMenu' 
         component={ProfileMenu}
         // options={{
-        //   title: 'profile Menu', //Set Header Title
-        //   headerStyle: {
-        //     backgroundColor: '#000000', //Set Header color
+          //   title: 'profile Menu', //Set Header Title
+          //   headerStyle: {
+            //     backgroundColor: '#000000', //Set Header color
         //   },
         //   headerTintColor: '#ffffff', //Set Header text color
         //   headerTitleStyle: {
@@ -62,20 +66,36 @@ function App({navigation}) {
       <Stack.Screen 
         name='Favourite' 
         component={Favourite}
-        // options={{
-        //   title: 'profile Menu', //Set Header Title
-        //   headerStyle: {
-        //     backgroundColor: '#000000', //Set Header color
-        //   },
-        //   headerTintColor: '#ffffff', //Set Header text color
-        //   headerTitleStyle: {
-        //   fontWeight: 'bold', //Set Header text style
-        //   },
-        //   headerRight: () => <NavBar/>,
-        // }}
+        options={{
+          title: 'Favourite', //Set Header Title
+          headerStyle: {
+            backgroundColor: '#000000', //Set Header color
+          },
+          headerTintColor: '#ffffff', //Set Header text color
+          headerTitleStyle: {
+          fontWeight: 'bold', //Set Header text style
+          },
+          headerRight: () => <NavBar/>,
+        }}
+      ></Stack.Screen>
+      <Stack.Screen 
+        name='HelpCenter' 
+        component={HelpCenter}
+        options={{
+          title: 'HelpCenter', //Set Header Title
+          headerStyle: {
+            backgroundColor: '#000000', //Set Header color
+          },
+          headerTintColor: '#ffffff', //Set Header text color
+          headerTitleStyle: {
+          fontWeight: 'bold', //Set Header text style
+          },
+          headerRight: () => <NavBar/>,
+        }}
       ></Stack.Screen>
     </Stack.Navigator>
-  </NavigationContainer>
+    </NavigationContainer>
+  </PracticeProvider>
   );
 }
 

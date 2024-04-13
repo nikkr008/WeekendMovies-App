@@ -10,7 +10,7 @@ const NavBar = () => {
   const navigation= useNavigation()
   return (
     <View style={{flexDirection: 'row'}}>
-      <Image
+      {/* <Image
         source={{
           uri:
             'https://raw.githubusercontent.com/AboutReact/sampleresource/master/logosmalltransparen.png',
@@ -21,7 +21,7 @@ const NavBar = () => {
           borderRadius: 40 / 2,
           marginRight: 80
         }}
-      />
+      /> */}
       <TouchableOpacity onPress={()=>{navigation.navigate('ProfileMenu')}}>
         <FontAwesome name="user" size={38} color="#ffffff" paddingRight={20}/>
       </TouchableOpacity>

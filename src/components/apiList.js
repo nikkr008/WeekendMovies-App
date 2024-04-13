@@ -87,7 +87,7 @@ const MainScreen = ({navigation}) => {
               <View>
                 <Text style={styles.movieTitle}>{item.title}</Text>
                 <Text style={styles.movieDes}>
-                  Popularity: {item.popularity}
+                  {" "}Popularity: {item.popularity}
                   {'\n'} Vote count: {item.vote_count}
                   {'\n'} language: {item.original_language}
                 </Text>
@@ -112,7 +112,7 @@ const MainScreen = ({navigation}) => {
 
 const styles = StyleSheet.create({
   body:{
-    height: 610,
+    height: 'auto',
     width: 'auto',
     marginBottom: 'auto',
     padding: 'auto'
@@ -127,16 +127,17 @@ const styles = StyleSheet.create({
   },
   movieTitle: {
     marginTop: 8,
-    height: 30,
-    fontSize: 24,
+    fontSize: 18,
+    marginLeft: 5,
     fontWeight: 'bold',
+    color: '#000000'
   },
   movieDes: {
     marginTop: 8,
     marginLeft: 8,
-    height: 50,
     fontSize: 14,
-    fontWeight: '500'
+    fontWeight: '500',
+    color: '#000000'
   },
   movieImage: {
     height: 100,
@@ -171,7 +172,6 @@ const styles = StyleSheet.create({
       height: 60,
       backgroundColor: 'lightgrey',
       marginTop: 10,
-      marginBottom: 20
   },
   loadBtnTxt:{
       backgroundColor: 'blue',
