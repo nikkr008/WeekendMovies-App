@@ -1,4 +1,4 @@
-[Uploading Movies_Suggestion.webm…]()
+[Movies_Suggestion.webm](https://github.com/nikkr008/WeekendMovies-App/assets/87872978/6fa92579-647f-49d8-af8c-eba3d7c8fa18)
 
 This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
