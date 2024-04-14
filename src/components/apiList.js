@@ -155,7 +155,7 @@ const styles = StyleSheet.create({
   },
   languagetxt:{
       margin: 2,
-      backgroundColor: 'blue',
+      backgroundColor: '#438fb0',
       color: 'white',
       padding: 10,
       height: 40,
@@ -174,7 +174,7 @@ const styles = StyleSheet.create({
       marginTop: 10,
   },
   loadBtnTxt:{
-      backgroundColor: 'blue',
+      backgroundColor: '#438fb0',
       color: 'white',
       padding: 10,
       height: 40,

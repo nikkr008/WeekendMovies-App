@@ -9,6 +9,9 @@ import NavBar from './components/NavBar';
 import ProfileMenu from './components/ProfileMenu';
 import Favourite from './components/Favourite';
 import HelpCenter from './components/HelpCenter';
+import LoginScreen from './components/LoginScreen';
+import SignUp from './components/SignUp';
+import ForgotPassword from './components/ForgotPassword';
 import {PracticeContext, PracticeProvider} from './components/Context';
 
 const Stack = createNativeStackNavigator();
@@ -17,14 +20,59 @@ function App({navigation}) {
   return (
     <PracticeProvider>
     <NavigationContainer>
-    <Stack.Navigator initialRouteName='MainScreen'>
+    <Stack.Navigator initialRouteName='LoginScreen'>
+      <Stack.Screen 
+        name='LoginScreen' 
+        component={LoginScreen}
+        options={{
+          title: 'Movies Suggestions', //Set Header Title
+          headerStyle: {
+            backgroundColor: '#438fb0',//Set Header color
+          },
+          headerTintColor: '#ffffff', //Set Header text color
+          headerTitleStyle: {
+            fontWeight: 'bold', //Set Header text style
+          },
+          headerRight: () => <NavBar/>,
+        }}
+        ></Stack.Screen>
+      <Stack.Screen 
+        name='SignUp' 
+        component={SignUp}
+        options={{
+          title: 'SignUp', //Set Header Title
+          headerStyle: {
+            backgroundColor: '#438fb0', //Set Header color
+          },
+          headerTintColor: '#ffffff', //Set Header text color
+          headerTitleStyle: {
+            fontWeight: 'bold', //Set Header text style
+          },
+          headerRight: () => <NavBar/>,
+        }}
+        ></Stack.Screen>
+      <Stack.Screen 
+        name='ForgotPassword' 
+        component={ForgotPassword}
+        options={{
+          title: 'ForgotPassword', //Set Header Title
+          headerStyle: {
+            backgroundColor: '#438fb0', //Set Header color
+          },
+          headerTintColor: '#ffffff', //Set Header text color
+          headerTitleStyle: {
+            fontWeight: 'bold', //Set Header text style
+          },
+          headerRight: () => <NavBar/>,
+        }}
+        ></Stack.Screen>
       <Stack.Screen 
         name='MainScreen' 
         component={MainScreen}
         options={{
           title: 'Movie List', //Set Header Title
           headerStyle: {
-            backgroundColor: '#000000', //Set Header color
+            backgroundColor: '#438fb0', //Set Header color
           },
           headerTintColor: '#ffffff', //Set Header text color
           headerTitleStyle: {
@@ -39,7 +87,7 @@ function App({navigation}) {
         options={{
           title: 'Movie Details', //Set Header Title
           headerStyle: {
-            backgroundColor: '#000000', //Set Header color
+            backgroundColor: '#438fb0', //Set Header color
           },
           headerTintColor: '#ffffff', //Set Header text color
           headerTitleStyle: {
@@ -69,7 +117,7 @@ function App({navigation}) {
         options={{
           title: 'Favourite', //Set Header Title
           headerStyle: {
-            backgroundColor: '#000000', //Set Header color
+            backgroundColor: '#438fb0', //Set Header color
           },
           headerTintColor: '#ffffff', //Set Header text color
           headerTitleStyle: {
@@ -84,7 +132,7 @@ function App({navigation}) {
         options={{
           title: 'HelpCenter', //Set Header Title
           headerStyle: {
-            backgroundColor: '#000000', //Set Header color
+            backgroundColor: '#438fb0', //Set Header color
           },
           headerTintColor: '#ffffff', //Set Header text color
           headerTitleStyle: {
