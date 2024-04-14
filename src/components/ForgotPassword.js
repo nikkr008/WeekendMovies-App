@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity, Dimensions } from 'react-native'
+import { StyleSheet, ScrollView, Text, View, Image, TextInput, TouchableOpacity, Dimensions, KeyboardAvoidingView } from 'react-native'
 import React, { useState } from 'react'
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
@@ -23,7 +23,8 @@ export default function ForgotPassword({navigation}) {
   }
 
   return (
-    <View style={styles.container}>
+    <ScrollView>
+    <KeyboardAvoidingView style={styles.container}>
             <Image source={require('./images/head.png')} style={styles.image} />
             <Image source={require('./images/profileLogo.png')} style={styles.Profileimg} />
             <Text style={styles.title}>Update Password</Text>
@@ -53,7 +54,8 @@ export default function ForgotPassword({navigation}) {
                     <Text style={styles.signUpText}>Signup</Text>
                 </TouchableOpacity>
             </View>
-        </View>
+        </KeyboardAvoidingView>
+        </ScrollView>
     );
 };
 

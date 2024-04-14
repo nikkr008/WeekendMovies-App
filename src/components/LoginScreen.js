@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, TextInput, TouchableOpacity, Alert, Dimensions, Image } from 'react-native';
+import { StyleSheet, ScrollView, KeyboardAvoidingView, Text, View, TextInput, TouchableOpacity, Alert, Dimensions, Image } from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -16,7 +16,7 @@ const LoginScreen = ({navigation}) => {
               alert('Invalid Email. Please enter a valid email address.');
             } 
             else {
-                if(state.email === 'nik.kr008@gmail.com' && state.password === 'nik'){
+                if(state.email === 'email@gmail.com' && state.password === 'Pass'){
                 //   alert("Thanks nik");
                 // alert(state.email);
                   navigation.navigate('MainScreen')
@@ -32,40 +32,43 @@ const LoginScreen = ({navigation}) => {
 
     return (
         <SafeAreaView>
-        <View style={styles.container}>
-            <Image source={require('./images/head.png')} style={styles.image} />
-            <Image source={require('./images/ProfileImg.png')} style={styles.Profileimg} />
-            <Text style={styles.title}>Sign in</Text>
-            <View style={styles.inputView}>
-                <TextInput
-                    style={styles.inputText}
-                    placeholder="Email"
-                    placeholderTextColor="#003f5c"
-                    onChangeText={text => setState(prevState => ({ ...prevState, email: text }))}
-                />
-            </View>
-            <View style={styles.inputView}>
-                <TextInput
-                    style={styles.inputText}
-                    secureTextEntry
-                    placeholder="Password"
-                    placeholderTextColor="#003f5c"
-                    onChangeText={text => setState(prevState => ({ ...prevState, password: text }))}
-                />
-            </View>
-            <TouchableOpacity onPress={() => navigation.navigate('ForgotPassword')}>
-                <Text style={styles.forgotText}>Forgot Your Password?</Text>
-            </TouchableOpacity>
-            <TouchableOpacity onPress={onPressLogin} style={styles.signinBtn}>
-                <Text style={styles.signinText}>Sign in</Text>
-            </TouchableOpacity>
-            <View style={styles.signup}>
-                <Text style={{color: '#000000', marginTop:8, paddingRight: 8, fontSize: 15}}> Don't Have an Account </Text>
-                <TouchableOpacity onPress={() => navigation.navigate('SignUp')}>
-                    <Text style={styles.signUpText}>Signup</Text>
+        <ScrollView>
+            <KeyboardAvoidingView style={styles.container}>
+                <Image source={require('./images/head.png')} style={styles.image} />
+                <Image source={require('./images/ProfileImg.png')} style={styles.Profileimg} />
+                <Text style={styles.title}>Sign in</Text>
+                <View style={styles.inputView}>
+                    <TextInput
+                        style={styles.inputText}
+                        placeholder="Email"
+                        placeholderTextColor="#003f5c"
+                        onChangeText={text => setState(prevState => ({ ...prevState, email: text }))}
+                    />
+                </View>
+                <KeyboardAvoidingView style={styles.inputView}>
+                    <TextInput
+                        style={styles.inputText}
+                        secureTextEntry
+                        placeholder="Password"
+                        placeholderTextColor="#003f5c"
+                        onChangeText={text => setState(prevState => ({ ...prevState, password: text }))}
+                    />
+                </KeyboardAvoidingView>
+                <TouchableOpacity onPress={() => navigation.navigate('ForgotPassword')}>
+                    <Text style={styles.forgotText}>Forgot Your Password?</Text>
                 </TouchableOpacity>
-            </View>
-        </View>
+                <TouchableOpacity onPress={onPressLogin} style={styles.signinBtn}>
+                    <Text style={styles.signinText}>Sign in</Text>
+                </TouchableOpacity>
+                <View style={styles.signup}>
+                    <Text style={{color: '#000000', marginTop:8, paddingRight: 8, fontSize: 15}}> Don't Have an Account </Text>
+                    <TouchableOpacity onPress={() => navigation.navigate('SignUp')}>
+                        <Text style={styles.signUpText}>Signup</Text>
+                    </TouchableOpacity>
+                </View>
+            </KeyboardAvoidingView>
+
+        </ScrollView>
         </SafeAreaView>
     );
 };

@@ -58,7 +58,11 @@ const ProfileMenu = ({navigation}) => {
             <FontAwesome name="chevron-right" size={24} color="blue"/>
           </View>
         </TouchableOpacity>
-        
+        <TouchableOpacity onPress={()=>{navigation.navigate('LoginScreen')}} style={{height: 40, width: 200, marginLeft: 90, backgroundColor: 'blue',alignItems: 'center', justifyContent: 'center', borderRadius: 20}}>
+          <View style={{justifyContent: 'center', alignItems: 'center'}}>
+              <Text style={{color: '#fff', fontSize: 22}}>Log Out</Text>
+          </View>
+        </TouchableOpacity>
       </View>
     </View>
   )

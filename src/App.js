@@ -55,7 +55,7 @@ function App({navigation}) {
         name='ForgotPassword' 
         component={ForgotPassword}
         options={{
-          title: 'ForgotPassword', //Set Header Title
+          title: 'Update Password', //Set Header Title
           headerStyle: {
             backgroundColor: '#438fb0', //Set Header color
           },

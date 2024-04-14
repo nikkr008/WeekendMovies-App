@@ -5,7 +5,9 @@ import {
   Image,
   TextInput,
   TouchableOpacity,
-  Dimensions
+  Dimensions,
+  ScrollView,
+  KeyboardAvoidingView
 } from 'react-native';
 import React, {useState, useRef} from 'react';
 import {NavigationContainer} from '@react-navigation/native';
@@ -77,7 +79,8 @@ export default function SignUp({navigation}) {
   };
 
   return (
-    <View style={styles.container}>
+    <ScrollView>
+    <KeyboardAvoidingView style={styles.container}>
       <Image source={require('./images/head.png')} style={styles.image} />
       <Text style={styles.title}>Sign Up</Text>
       <View style={styles.inputView}>
@@ -147,7 +150,8 @@ export default function SignUp({navigation}) {
           <Text style={{fontSize: 18, fontWeight: '300', color: '#000000'}} onPress={() => navigation.navigate('LoginScreen')}> Cancel </Text>
         </TouchableOpacity>
       </View>
-    </View>
+    </KeyboardAvoidingView>
+    </ScrollView>
   );
 }
 
